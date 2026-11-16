@@ -1,0 +1,24 @@
+[package]
+name = "core-sync"
+description = "Null Seal sync client: HLC, signed relay requests, push/pull/apply and device enrollment"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[features]
+# In-memory relay for tests of this crate and of crates built on it.
+mock = []
+
+[dependencies]
+base64 = "0.23.1"
+core-crypto = { version = "0.0.0", path = "../core-crypto" }
+core-keys = { version = "0.0.0", path = "../core-keys" }
+core-store = { version = "0.0.0", path = "../core-store" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+zeroize = "1.9.1"

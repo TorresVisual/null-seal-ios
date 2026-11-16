@@ -1,0 +1,591 @@
+{
+  "items": [
+    {
+      "source_id": "10000000-0000-4000-8000-000000000001",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "login",
+        "data": {
+          "title": "Example Mail",
+          "notes": "Synthetic login.\nSecond line of notes.",
+          "favorite": true,
+          "folder": "Personal",
+          "reprompt": true,
+          "created_at": 1732090500000,
+          "updated_at": 1772359200000,
+          "username": "synthetic.user@example.com",
+          "password": "synthetic-password-1!",
+          "totp": "otpauth://totp/Example:synthetic.user@example.com?secret=JBSWY3DPEHPK3PXP&issuer=Example&period=30&digits=6&algorithm=SHA1",
+          "urls": [
+            {
+              "url": "https://mail.example.com/login"
+            },
+            {
+              "url": "https://example.com:8443",
+              "match": "host"
+            },
+            {
+              "url": "https://exact.example.com/signin",
+              "match": "exact"
+            },
+            {
+              "url": "^https://.*\\.example\\.org/.*$",
+              "match": "regex"
+            },
+            {
+              "url": "https://never.example.com",
+              "match": "never"
+            },
+            {
+              "url": "androidapp://com.example.mail",
+              "match": "starts_with"
+            }
+          ]
+        },
+        "extras": {
+          "bitwarden": {
+            "fields": [
+              {
+                "linkedId": null,
+                "name": "recovery hint",
+                "type": 0,
+                "value": "first pet"
+              },
+              {
+                "linkedId": null,
+                "name": "api token",
+                "type": 1,
+                "value": "synthetic-hidden-field-value"
+              },
+              {
+                "linkedId": null,
+                "name": "newsletter",
+                "type": 2,
+                "value": "true"
+              },
+              {
+                "linkedId": 100,
+                "name": "linked user",
+                "type": 3,
+                "value": null
+              }
+            ],
+            "id": "10000000-0000-4000-8000-000000000001",
+            "passwordHistory": [
+              {
+                "lastUsedDate": "2025-01-10T09:00:00.000Z",
+                "password": "synthetic-old-password-1"
+              },
+              {
+                "lastUsedDate": "2025-06-02T12:30:00.000Z",
+                "password": "synthetic-old-password-2"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "source_id": "10000000-0000-4000-8000-000000000002",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "login",
+        "data": {
+          "title": "Bare TOTP and Steam",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 1771094700000,
+          "updated_at": 1771094700000,
+          "username": "totp-user",
+          "totp": "JBSWY3DPEHPK3PXP",
+          "urls": [
+            {
+              "url": "https://totp.example.net"
+            }
+          ]
+        },
+        "extras": {
+          "bitwarden": {
+            "id": "10000000-0000-4000-8000-000000000002"
+          }
+        }
+      }
+    },
+    {
+      "source_id": "10000000-0000-4000-8000-000000000003",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "login",
+        "data": {
+          "title": "Steam style code",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 1771094760000,
+          "updated_at": 1771094760000,
+          "username": "steam-user",
+          "password": "synthetic-password-3",
+          "totp": "steam://ABCDEFGHIJKLMNOP",
+          "urls": [
+            {
+              "url": "https://steam.example.net"
+            }
+          ]
+        },
+        "extras": {
+          "bitwarden": {
+            "id": "10000000-0000-4000-8000-000000000003"
+          }
+        }
+      }
+    },
+    {
+      "source_id": "10000000-0000-4000-8000-000000000004",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "login",
+        "data": {
+          "title": "Passkey site",
+          "favorite": false,
+          "folder": "Work/Clients",
+          "reprompt": false,
+          "created_at": 1775026800000,
+          "updated_at": 1775026800000,
+          "username": "passkey-user",
+          "urls": [
+            {
+              "url": "https://passkey.example.com"
+            }
+          ]
+        },
+        "extras": {
+          "bitwarden": {
+            "id": "10000000-0000-4000-8000-000000000004",
+            "login.fido2Credentials": [
+              {
+                "counter": "0",
+                "creationDate": "2026-04-01T07:00:00.000Z",
+                "credentialId": "c3ludGhldGljLWNyZWRlbnRpYWwtaWQ",
+                "discoverable": "true",
+                "keyAlgorithm": "ECDSA",
+                "keyCurve": "P-256",
+                "keyType": "public-key",
+                "keyValue": "U1lOVEhFVElDLU5PVC1BLUtFWQ",
+                "rpId": "passkey.example.com",
+                "rpName": "Passkey Example",
+                "userDisplayName": "Passkey User",
+                "userHandle": "c3ludGhldGljLXVzZXI",
+                "userName": "passkey-user"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "source_id": "20000000-0000-4000-8000-000000000001",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "note",
+        "data": {
+          "title": "Home Wi-Fi",
+          "notes": "Synthetic Wi-Fi note (Bitwarden has no Wi-Fi type; users keep these as notes with fields).",
+          "favorite": false,
+          "folder": "Personal",
+          "reprompt": false,
+          "created_at": 1767610800000,
+          "updated_at": 1767610800000
+        },
+        "extras": {
+          "bitwarden": {
+            "fields": [
+              {
+                "linkedId": null,
+                "name": "SSID",
+                "type": 0,
+                "value": "synthetic-ssid"
+              },
+              {
+                "linkedId": null,
+                "name": "password",
+                "type": 1,
+                "value": "synthetic-wifi-password"
+              }
+            ],
+            "id": "20000000-0000-4000-8000-000000000001"
+          }
+        }
+      }
+    },
+    {
+      "source_id": "30000000-0000-4000-8000-000000000001",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "note",
+        "data": {
+          "title": "Synthetic Visa",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 1767697200000,
+          "updated_at": 1767697200000
+        },
+        "extras": {
+          "bitwarden": {
+            "card": {
+              "brand": "Visa",
+              "cardholderName": "Synthetic Person",
+              "code": "123",
+              "expMonth": "12",
+              "expYear": "2030",
+              "number": "4111111111111111"
+            },
+            "id": "30000000-0000-4000-8000-000000000001",
+            "type": 3
+          }
+        }
+      }
+    },
+    {
+      "source_id": "40000000-0000-4000-8000-000000000001",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "note",
+        "data": {
+          "title": "Synthetic identity",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 1767783600000,
+          "updated_at": 1767783600000
+        },
+        "extras": {
+          "bitwarden": {
+            "id": "40000000-0000-4000-8000-000000000001",
+            "identity": {
+              "address1": "1 Example Street",
+              "address2": "Flat 2",
+              "address3": null,
+              "city": "Exampleton",
+              "company": "Example Corp",
+              "country": "XX",
+              "email": "sam@example.com",
+              "firstName": "Sam",
+              "lastName": "Synthetic",
+              "licenseNumber": "L0000000",
+              "middleName": "Q",
+              "passportNumber": "X0000000",
+              "phone": "+00 000 0000",
+              "postalCode": "00000",
+              "ssn": "000-00-0000",
+              "state": "EX",
+              "title": "Mx",
+              "username": "samsynthetic"
+            },
+            "type": 4
+          }
+        }
+      }
+    },
+    {
+      "source_id": "50000000-0000-4000-8000-000000000001",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "note",
+        "data": {
+          "title": "Synthetic SSH key",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 1767870000000,
+          "updated_at": 1767870000000
+        },
+        "extras": {
+          "bitwarden": {
+            "id": "50000000-0000-4000-8000-000000000001",
+            "sshKey": {
+              "keyFingerprint": "SHA256:SYNTHETICFINGERPRINT",
+              "privateKey": "SYNTHETIC-NOT-A-REAL-PRIVATE-KEY",
+              "publicKey": "ssh-ed25519 SYNTHETICNOTAREALPUBLICKEY synthetic@example.com"
+            },
+            "type": 5
+          }
+        }
+      }
+    },
+    {
+      "source_id": "60000000-0000-4000-8000-000000000001",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "note",
+        "data": {
+          "title": "Synthetic bank account (newer Bitwarden type)",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 1767956400000,
+          "updated_at": 1767956400000
+        },
+        "extras": {
+          "bitwarden": {
+            "bankAccount": {
+              "accountNumber": "00000000",
+              "accountType": "checking",
+              "bankContactPhone": "+00 000 0000",
+              "bankName": "Example Bank",
+              "branchNumber": "000",
+              "iban": "XX00EXAMPLE00000000",
+              "nameOnAccount": "Sam Synthetic",
+              "pin": "0000",
+              "routingNumber": "000000000",
+              "swiftCode": "EXAMPLEXXX"
+            },
+            "id": "60000000-0000-4000-8000-000000000001",
+            "type": 6
+          }
+        }
+      }
+    },
+    {
+      "source_id": "70000000-0000-4000-8000-000000000001",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "note",
+        "data": {
+          "title": "Synthetic driver's license (newer Bitwarden type)",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 1768042800000,
+          "updated_at": 1768042800000
+        },
+        "extras": {
+          "bitwarden": {
+            "driversLicense": {
+              "dateOfBirth": "1990-01-01",
+              "expirationDate": "2030-01-01",
+              "firstName": "Sam",
+              "issueDate": "2020-01-01",
+              "issuingAuthority": "Example DMV",
+              "issuingCountry": "XX",
+              "issuingState": "EX",
+              "lastName": "Synthetic",
+              "licenseClass": "B",
+              "licenseNumber": "DL000000",
+              "middleName": "Q"
+            },
+            "id": "70000000-0000-4000-8000-000000000001",
+            "type": 7
+          }
+        }
+      }
+    },
+    {
+      "source_id": "80000000-0000-4000-8000-000000000001",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "note",
+        "data": {
+          "title": "Synthetic passport (newer Bitwarden type)",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 1768129200000,
+          "updated_at": 1768129200000
+        },
+        "extras": {
+          "bitwarden": {
+            "id": "80000000-0000-4000-8000-000000000001",
+            "passport": {
+              "birthPlace": "Exampleton",
+              "dateOfBirth": "1990-01-01",
+              "expirationDate": "2030-01-01",
+              "givenName": "Sam",
+              "issueDate": "2020-01-01",
+              "issuingAuthority": "Example Authority",
+              "issuingCountry": "XX",
+              "nationalIdentificationNumber": "000000000",
+              "nationality": "XX",
+              "passportNumber": "P0000000",
+              "passportType": "P",
+              "sex": "X",
+              "surname": "Synthetic"
+            },
+            "type": 8
+          }
+        }
+      }
+    },
+    {
+      "source_id": "10000000-0000-4000-8000-000000000005",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "login",
+        "data": {
+          "title": "Trashed and archived login",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 1746082800000,
+          "updated_at": 1777618800000,
+          "deleted_at": 1777705200000,
+          "username": "trashed",
+          "password": "synthetic-trashed",
+          "urls": [
+            {
+              "url": "https://trashed.example.com"
+            }
+          ]
+        },
+        "extras": {
+          "bitwarden": {
+            "archivedDate": "2026-04-20T07:00:00.000Z",
+            "id": "10000000-0000-4000-8000-000000000005"
+          }
+        }
+      }
+    },
+    {
+      "source_id": "10000000-0000-4000-8000-000000000006",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "login",
+        "data": {
+          "title": "Unicode and long values: äöü 日本語 🔐",
+          "notes": "Multi-line\r\nnotes with CRLF and a trailing space ",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 1777878000000,
+          "updated_at": 1777878000000,
+          "username": "üser@example.com",
+          "password": "pässwörd 🔑 with spaces  ",
+          "urls": [
+            {
+              "url": "https://unicode.example.com/über"
+            }
+          ]
+        },
+        "extras": {
+          "bitwarden": {
+            "id": "10000000-0000-4000-8000-000000000006"
+          }
+        }
+      }
+    }
+  ],
+  "report": [
+    {
+      "id": "10000000-0000-4000-8000-000000000001",
+      "name": "Example Mail",
+      "path": "fields",
+      "outcome": "preserved"
+    },
+    {
+      "id": "10000000-0000-4000-8000-000000000001",
+      "name": "Example Mail",
+      "path": "passwordHistory",
+      "outcome": "preserved"
+    },
+    {
+      "id": "10000000-0000-4000-8000-000000000004",
+      "name": "Passkey site",
+      "path": "login.fido2Credentials",
+      "outcome": "preserved"
+    },
+    {
+      "id": "20000000-0000-4000-8000-000000000001",
+      "name": "Home Wi-Fi",
+      "path": "fields",
+      "outcome": "preserved"
+    },
+    {
+      "id": "30000000-0000-4000-8000-000000000001",
+      "name": "Synthetic Visa",
+      "path": "type",
+      "outcome": "preserved"
+    },
+    {
+      "id": "30000000-0000-4000-8000-000000000001",
+      "name": "Synthetic Visa",
+      "path": "card",
+      "outcome": "preserved"
+    },
+    {
+      "id": "40000000-0000-4000-8000-000000000001",
+      "name": "Synthetic identity",
+      "path": "type",
+      "outcome": "preserved"
+    },
+    {
+      "id": "40000000-0000-4000-8000-000000000001",
+      "name": "Synthetic identity",
+      "path": "identity",
+      "outcome": "preserved"
+    },
+    {
+      "id": "50000000-0000-4000-8000-000000000001",
+      "name": "Synthetic SSH key",
+      "path": "type",
+      "outcome": "preserved"
+    },
+    {
+      "id": "50000000-0000-4000-8000-000000000001",
+      "name": "Synthetic SSH key",
+      "path": "sshKey",
+      "outcome": "preserved"
+    },
+    {
+      "id": "60000000-0000-4000-8000-000000000001",
+      "name": "Synthetic bank account (newer Bitwarden type)",
+      "path": "type",
+      "outcome": "preserved"
+    },
+    {
+      "id": "60000000-0000-4000-8000-000000000001",
+      "name": "Synthetic bank account (newer Bitwarden type)",
+      "path": "bankAccount",
+      "outcome": "preserved"
+    },
+    {
+      "id": "70000000-0000-4000-8000-000000000001",
+      "name": "Synthetic driver's license (newer Bitwarden type)",
+      "path": "type",
+      "outcome": "preserved"
+    },
+    {
+      "id": "70000000-0000-4000-8000-000000000001",
+      "name": "Synthetic driver's license (newer Bitwarden type)",
+      "path": "driversLicense",
+      "outcome": "preserved"
+    },
+    {
+      "id": "80000000-0000-4000-8000-000000000001",
+      "name": "Synthetic passport (newer Bitwarden type)",
+      "path": "type",
+      "outcome": "preserved"
+    },
+    {
+      "id": "80000000-0000-4000-8000-000000000001",
+      "name": "Synthetic passport (newer Bitwarden type)",
+      "path": "passport",
+      "outcome": "preserved"
+    },
+    {
+      "id": "10000000-0000-4000-8000-000000000005",
+      "name": "Trashed and archived login",
+      "path": "archivedDate",
+      "outcome": "preserved"
+    },
+    {
+      "id": "99000000-0000-4000-8000-000000000001",
+      "name": "Unknown future cipher type",
+      "path": "type=99",
+      "outcome": "skipped"
+    }
+  ]
+}

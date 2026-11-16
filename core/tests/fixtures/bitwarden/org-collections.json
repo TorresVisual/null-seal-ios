@@ -1,0 +1,33 @@
+{
+  "encrypted": false,
+  "collections": [
+    { "id": "c0000000-0000-4000-8000-000000000001", "organizationId": "0a000000-0000-4000-8000-000000000001", "name": "Shared/Team", "externalId": null },
+    { "id": "c0000000-0000-4000-8000-000000000002", "organizationId": "0a000000-0000-4000-8000-000000000001", "name": "Ops", "externalId": "ext-ops" }
+  ],
+  "items": [
+    {
+      "passwordHistory": null,
+      "revisionDate": "2026-03-01T10:00:00.000Z",
+      "creationDate": "2026-03-01T10:00:00.000Z",
+      "deletedDate": null,
+      "id": "a0000000-0000-4000-8000-000000000001",
+      "organizationId": "0a000000-0000-4000-8000-000000000001",
+      "folderId": null,
+      "type": 1,
+      "reprompt": 0,
+      "name": "Org login in two collections",
+      "notes": null,
+      "favorite": false,
+      "login": {
+        "uris": [{ "match": null, "uri": "https://org.example.com" }],
+        "username": "org-user",
+        "password": "synthetic-org-password",
+        "totp": null
+      },
+      "collectionIds": [
+        "c0000000-0000-4000-8000-000000000001",
+        "c0000000-0000-4000-8000-000000000002"
+      ]
+    }
+  ]
+}

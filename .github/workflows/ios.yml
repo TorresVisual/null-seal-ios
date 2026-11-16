@@ -1,0 +1,62 @@
+name: iOS
+
+# Runs in the public mirror only (#83): free macOS minutes, builds from core/ and ios/ alone.
+# Every snapshot builds an IPA artifact; a pushed v* tag also publishes it as a release asset.
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  XCODEGEN_VERSION: 2.46.0
+  XCODEGEN_SHA256: 4d9e34b62172d645eed6457cac13fc222569974098ef4ee9c3368bedf0196806
+
+jobs:
+  ipa:
+    runs-on: macos-26
+    permissions:
+      contents: write # release upload
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Pin Xcode
+        run: sudo xcode-select -s /Applications/Xcode_26.6.app
+      - name: Install XcodeGen
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/xcodegen.zip" "https://github.com/yonaskolb/XcodeGen/releases/download/${XCODEGEN_VERSION}/xcodegen.zip"
+          echo "${XCODEGEN_SHA256}  $RUNNER_TEMP/xcodegen.zip" | shasum -a 256 -c -
+          unzip -q "$RUNNER_TEMP/xcodegen.zip" -d "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/xcodegen/bin" >> "$GITHUB_PATH"
+      - name: Rust core to XCFramework
+        run: bash ios/scripts/build-xcframework.sh
+      - name: Unsigned IPA
+        env:
+          NS_TAG: ${{ startsWith(github.ref, 'refs/tags/v') && github.ref_name || '' }}
+          NS_BUILD: ${{ github.run_number }}
+        run: bash ios/scripts/build-ipa.sh
+      # #84: the AltStore source is generated per build and validated every time; only a tag publishes it.
+      - name: AltStore source
+        run: |
+          TAG="${GITHUB_REF_NAME}"; [ "$GITHUB_REF_TYPE" = tag ] || TAG="v0.0.0-dev"
+          python3 ios/scripts/test_make_altstore.py
+          python3 ios/scripts/make-altstore.py ios/build/NullSeal.ipa "$TAG" "$GITHUB_RUN_NUMBER" ios/build/altstore.json
+          python3 ios/scripts/make-altstore.py --check ios/build/altstore.json
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: NullSeal.ipa
+          path: |
+            ios/build/NullSeal.ipa
+            ios/build/altstore.json
+      - name: Publish release assets
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp ios/build/NullSeal.ipa "NullSeal-${GITHUB_REF_NAME}.ipa"
+          gh release create "$GITHUB_REF_NAME" "NullSeal-${GITHUB_REF_NAME}.ipa" ios/build/altstore.json --title "$GITHUB_REF_NAME" --notes "Unsigned IPA; AltStore re-signs on install."
+          python3 ios/scripts/make-altstore.py --check ios/build/altstore.json --resolve

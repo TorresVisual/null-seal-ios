@@ -1,0 +1,16 @@
+[package]
+name = "core-gen"
+description = "Null Seal password and passphrase generator plus strength estimation"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+core-crypto = { version = "0.0.0", path = "../core-crypto" }
+zeroize = "1.9.1"
+zxcvbn = { version = "3.1.1", default-features = false }

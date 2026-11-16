@@ -1,0 +1,37 @@
+[package]
+name = "core-uniffi"
+description = "Null Seal UniFFI bindings (Swift for iOS); the Rust core is the single implementation"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+publish.workspace = true
+
+[lib]
+crate-type = ["lib", "cdylib", "staticlib"]
+
+# UniFFI scaffolding is generated unsafe code, so unsafe_code cannot be `forbid` here.
+[lints.rust]
+unsafe_code = "deny"
+
+[lints.clippy]
+all = { level = "deny", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+dbg_macro = "deny"
+print_stdout = "deny"
+print_stderr = "deny"
+
+[features]
+# Only for generating bindings: `cargo run --features cli --bin uniffi-bindgen`.
+cli = ["uniffi/cli"]
+
+[[bin]]
+name = "uniffi-bindgen"
+required-features = ["cli"]
+
+[dependencies]
+core-gen = { version = "0.0.0", path = "../core-gen" }
+seal-core = { version = "0.0.0", path = "../seal-core" }
+thiserror = "2"
+uniffi = "0.32.2"
