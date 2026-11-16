@@ -1,0 +1,98 @@
+{
+  "items": [
+    {
+      "source_id": "csv:039b561bcc6c5d31b9001e7e6643177e",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "login",
+        "data": {
+          "title": "Example Mail",
+          "notes": "Synthetic login.\nSecond line of notes.",
+          "favorite": true,
+          "folder": "Personal",
+          "reprompt": true,
+          "created_at": 0,
+          "updated_at": 0,
+          "username": "synthetic.user@example.com",
+          "password": "synthetic-password-1!",
+          "totp": "otpauth://totp/Example:synthetic.user@example.com?secret=JBSWY3DPEHPK3PXP&issuer=Example&period=30&digits=6&algorithm=SHA1",
+          "urls": [
+            {
+              "url": "https://mail.example.com/login"
+            },
+            {
+              "url": "https://example.com:8443"
+            }
+          ]
+        },
+        "extras": {
+          "bitwarden": {
+            "fields": "recovery hint: first pet\napi token: synthetic-hidden-field-value\nnewsletter: true"
+          }
+        }
+      }
+    },
+    {
+      "source_id": "csv:1634546d33ba98836c7832548930d26e",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "login",
+        "data": {
+          "title": "Bare TOTP and Steam",
+          "favorite": false,
+          "reprompt": false,
+          "created_at": 0,
+          "updated_at": 0,
+          "username": "totp-user",
+          "totp": "JBSWY3DPEHPK3PXP",
+          "urls": [
+            {
+              "url": "https://totp.example.net"
+            }
+          ]
+        },
+        "extras": {
+          "bitwarden": {}
+        }
+      }
+    },
+    {
+      "source_id": "csv:be117d65e4e461ba611c836e3b9c21f0",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "note",
+        "data": {
+          "title": "Home Wi-Fi",
+          "notes": "Synthetic Wi-Fi note",
+          "favorite": false,
+          "folder": "Personal",
+          "reprompt": false,
+          "created_at": 0,
+          "updated_at": 0
+        },
+        "extras": {
+          "bitwarden": {
+            "fields": "SSID: synthetic-ssid\npassword: synthetic-wifi-password"
+          }
+        }
+      }
+    }
+  ],
+  "report": [
+    {
+      "id": "csv:039b561bcc6c5d31b9001e7e6643177e",
+      "name": "Example Mail",
+      "path": "fields",
+      "outcome": "preserved"
+    },
+    {
+      "id": "csv:be117d65e4e461ba611c836e3b9c21f0",
+      "name": "Home Wi-Fi",
+      "path": "fields",
+      "outcome": "preserved"
+    }
+  ]
+}

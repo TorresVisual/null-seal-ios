@@ -1,0 +1,9 @@
+folder,favorite,type,name,notes,fields,reprompt,login_uri,login_username,login_password,login_totp
+Personal,1,login,Example Mail,"Synthetic login.
+Second line of notes.","recovery hint: first pet
+api token: synthetic-hidden-field-value
+newsletter: true",1,"https://mail.example.com/login
+https://example.com:8443",synthetic.user@example.com,synthetic-password-1!,otpauth://totp/Example:synthetic.user@example.com?secret=JBSWY3DPEHPK3PXP&issuer=Example&period=30&digits=6&algorithm=SHA1
+,0,login,Bare TOTP and Steam,,,0,https://totp.example.net,totp-user,,JBSWY3DPEHPK3PXP
+Personal,0,note,Home Wi-Fi,Synthetic Wi-Fi note,"SSID: synthetic-ssid
+password: synthetic-wifi-password",0,,,,

@@ -1,0 +1,17 @@
+[package]
+name = "core-keys"
+description = "Null Seal key hierarchy: account key and vault key wrappers, versioned envelope (ADR 0001)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+core-crypto = { version = "0.0.0", path = "../core-crypto" }
+unicode-normalization = "0.1.26"
+zeroize = "1.9.1"
+
