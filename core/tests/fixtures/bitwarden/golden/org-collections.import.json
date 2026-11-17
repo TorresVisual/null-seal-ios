@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "source_id": "a0000000-0000-4000-8000-000000000001",
+      "payload": {
+        "v": 1,
+        "kind": "item",
+        "type": "login",
+        "data": {
+          "title": "Org login in two collections",
+          "favorite": false,
+          "tags": [
+            "collection:Shared/Team",
+            "collection:Ops"
+          ],
+          "reprompt": false,
+          "created_at": 1772359200000,
+          "updated_at": 1772359200000,
+          "username": "org-user",
+          "password": "synthetic-org-password",
+          "urls": [
+            {
+              "url": "https://org.example.com"
+            }
+          ]
+        },
+        "extras": {
+          "bitwarden": {
+            "id": "a0000000-0000-4000-8000-000000000001",
+            "organizationId": "0a000000-0000-4000-8000-000000000001"
+          }
+        }
+      }
+    }
+  ],
+  "report": [
+    {
+      "id": "",
+      "name": "(export)",
+      "path": "collections[0].externalId",
+      "outcome": "skipped"
+    },
+    {
+      "id": "",
+      "name": "(export)",
+      "path": "collections[0].organizationId",
+      "outcome": "skipped"
+    },
+    {
+      "id": "",
+      "name": "(export)",
+      "path": "collections[1].externalId",
+      "outcome": "skipped"
+    },
+    {
+      "id": "",
+      "name": "(export)",
+      "path": "collections[1].organizationId",
+      "outcome": "skipped"
+    },
+    {
+      "id": "a0000000-0000-4000-8000-000000000001",
+      "name": "Org login in two collections",
+      "path": "organizationId",
+      "outcome": "preserved"
+    }
+  ]
+}

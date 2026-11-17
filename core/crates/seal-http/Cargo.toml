@@ -1,0 +1,23 @@
+[package]
+name = "seal-http"
+description = "Null Seal HTTPS transport for the sync client (ureq); desktop and the E2E harness use it, iOS does not"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+core-sync = { version = "0.0.0", path = "../core-sync" }
+ureq = { version = "3.5.2", default-features = false, features = ["rustls-no-provider"] }
+rustls-native-certs = "0.8.5"
+# ring as the TLS crypto provider (no CMake or C++ toolchain needed, unlike aws-lc-rs)
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12"] }
+
+[dev-dependencies]
+core-crypto = { version = "0.0.0", path = "../core-crypto" }
+core-store = { version = "0.0.0", path = "../core-store" }
+seal-core = { version = "0.0.0", path = "../seal-core" }

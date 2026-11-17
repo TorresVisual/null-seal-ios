@@ -1,0 +1,24 @@
+# Used by the mirror workflow's secret scan (gate 3, #14): gitleaks defaults plus Cloudflare rules.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "cloudflare-worker-host"
+description = "Cloudflare workers.dev / pages.dev host"
+regex = '''(?i)\b[a-z0-9-]+\.(?:[a-z0-9-]+\.)*(?:workers|pages)\.dev\b'''
+keywords = ["workers.dev", "pages.dev"]
+
+[[rules]]
+id = "cloudflare-d1-database-id"
+description = "Cloudflare D1 database id"
+regex = '''(?i)database_id\s*=\s*["']?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'''
+keywords = ["database_id"]
+
+# Synthetic known-answer vector (bytes counting up in steps of 7), not a secret. Scoped to this one
+# value, rule and file so the rest of the vectors file stays scanned.
+[[allowlists]]
+description = "synthetic recovery-code key in the v1 test vectors"
+targetRules = ["generic-api-key"]
+condition = "AND"
+paths = ['''core/tests/vectors/v1\.json$''']
+regexes = ['''01080f161d242b323940474e555c636a71787f868d949ba2a9b0b7bec5ccd3da''']

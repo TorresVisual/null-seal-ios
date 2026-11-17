@@ -1,0 +1,21 @@
+[package]
+name = "core-vault"
+description = "Null Seal vault items: versioned JSON payload, padding and per-record encryption (ADR 0001)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+core-crypto = { version = "0.0.0", path = "../core-crypto" }
+core-keys = { version = "0.0.0", path = "../core-keys" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+zeroize = "1.9.1"
+
+[dev-dependencies]
+proptest = "1"
