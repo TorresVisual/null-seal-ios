@@ -1,0 +1,29 @@
+[package]
+name = "seal-core"
+description = "Null Seal core: shared entry crate (crypto, vault, sync land in sibling crates)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+base64 = "0.23.1"
+core-gen = { version = "0.0.0", path = "../core-gen" }
+core-sync = { version = "0.0.0", path = "../core-sync" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+core-crypto = { version = "0.0.0", path = "../core-crypto" }
+core-import = { version = "0.0.0", path = "../core-import" }
+core-otp = { version = "0.0.0", path = "../core-otp" }
+core-ssh = { version = "0.0.0", path = "../core-ssh" }
+core-keys = { version = "0.0.0", path = "../core-keys" }
+core-store = { version = "0.0.0", path = "../core-store" }
+core-vault = { version = "0.0.0", path = "../core-vault" }
+zeroize = "1.9.1"
+
+[dev-dependencies]
+core-sync = { version = "0.0.0", path = "../core-sync", features = ["mock"] }

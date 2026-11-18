@@ -1,0 +1,16 @@
+[package]
+name = "core-ssh"
+description = "Null Seal SSH keys: generate and import Ed25519/RSA, OpenSSH public key and SHA256 fingerprint"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+ssh-key = { version = "=0.7.0-rc.12", default-features = false, features = ["alloc", "ed25519", "rsa", "rand_core"] }
+getrandom = { version = "0.4.3", features = ["sys_rng"] }
+zeroize = "1.9.1"
